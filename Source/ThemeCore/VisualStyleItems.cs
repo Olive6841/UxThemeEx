@@ -2,6 +2,20 @@ namespace ThemeCore
 {
     // AEROWIZARDSTYLE class parts and states
 
+    [VisualClass("AddressBand")]
+    public enum ADDRESSBANDPARTS
+    {
+        [VisualStates(typeof(ADDRESSBANDSTATES))]
+        ABP_ABBACKGROUND = 1,
+    }
+    public enum ADDRESSBANDSTATES
+    {
+        ABBG_NORMAL = 1,
+        ABBG_HOT = 2,
+        ABBG_DISABLED = 3,
+        ABBG_FOCUSED = 4,
+    }
+
     [VisualClass("AEROWIZARD")]
     public enum AEROWIZARDPARTS
     {
@@ -55,7 +69,15 @@ namespace ThemeCore
         CheckBoxHcDisabled = 9,
         [VisualStates(typeof(GROUPBOXSTATES))]
         GroupBoxHcDisabled = 10,
+        [VisualStates(typeof(PUSHBUTTONDROPDOWNSTATES))]
+        PushButtonDropDown = 11,
     }
+
+    public enum PUSHBUTTONDROPDOWNSTATES
+    {
+        PBDDS_NORMAL = 1,
+        PBDDS_DISABLED = 2
+    };
 
     public enum PUSHBUTTONSTATES
     {
@@ -149,6 +171,8 @@ namespace ThemeCore
         CP_DROPDOWNBUTTONLEFT = 7,
         [VisualStates(typeof(CUEBANNERSTATES))]
         CP_CUEBANNER = 8,
+        [VisualStates(typeof(DROPDOWNITEMSTATES))]
+        CP_DROPDOWNITEM = 9,
     }
 
     public enum COMBOBOXSTYLESTATES
@@ -158,6 +182,11 @@ namespace ThemeCore
         CBXS_PRESSED = 3,
         CBXS_DISABLED = 4,
     }
+    public enum DROPDOWNITEMSTATES
+    {
+        CBDI_NORMAL = 1,
+        CBDI_HIGHLIGHTED = 2,
+    };
 
     public enum DROPDOWNBUTTONRIGHTSTATES
     {
