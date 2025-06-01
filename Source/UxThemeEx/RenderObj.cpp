@@ -551,6 +551,19 @@ BYTE const* CRenderObj::GetLastValidThemeByte() const
     return _pbSharableData + themeHdr->dwTotalLength - 1 - 8;
 }
 
+HRESULT CRenderObj::ExternalGetColor(int iPartId, int iStateId, int iPropId, COLORREF* pColor) const
+{
+    if (!pColor)
+        return E_POINTER;
+
+    int index = GetValueIndex(iPartId, iStateId, iPropId);
+    if (index < 0)
+        return HRESULT_FROM_WIN32(ERROR_NOT_FOUND);
+
+    *pColor = *(COLORREF*)&_pbSharableData[index];
+    return S_OK;
+}
+
 HRESULT CRenderObj::GetPropertyOrigin(int iPartId, int iStateId, int iTarget,
                                       PROPERTYORIGIN* pOrigin) const
 {

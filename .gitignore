@@ -9,3 +9,4 @@ obj/
 *.user
 *.suo
 *.aps
+/Source/.idea

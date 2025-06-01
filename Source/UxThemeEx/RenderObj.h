@@ -118,6 +118,7 @@ public:
                               PROPERTYORIGIN* pOrigin) const;
     BYTE const* GetLastValidThemeByte() const;
 
+    HRESULT ExternalGetColor(int iPartId, int iStateId, int iPropId, COLORREF* pColor) const;
     HRESULT ExternalGetBitmap(HDC hdc, int iDibOffset, unsigned dwFlags,
                               HBITMAP* phBitmap) const;
     HRESULT ExternalGetBool(int iPartId, int iStateId, int iPropId, int* pfVal) const;
